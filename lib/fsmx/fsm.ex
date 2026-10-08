@@ -40,7 +40,7 @@ defmodule Fsmx.Fsm do
   end
 
   defmacro __before_compile__(_env) do
-    quote generated: false do
+    quote generated: true do
       def before_transition(struct, _from, _to), do: {:ok, struct}
 
       if Code.ensure_loaded?(Ecto) do
